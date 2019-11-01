@@ -1,0 +1,55 @@
+input{
+	width: 35%;
+	position: absolute;
+	left: 180px; /*change based on browser size */
+
+}
+label{
+font-family: "Geneva Regular", Arial, "Times New Roman"
+}
+legend{
+font-family: "Geneva Regular", Arial, "Times New Roman"
+}
+
+input:focus{
+	background-color:lightgrey;
+}
+
+fieldset{
+	margin-left: 20px;
+	width: 90%;
+  border:solid 2px blue;
+  border-radius: 5px;
+}
+
+
+input[type=submit] {
+	margin-top:25px;
+    padding:5px 15px;
+    background:#2D5C86;
+    border:2px solid lightgrey;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color:white;
+}
+
+form{
+	margin-bottom: 100px;
+  line-height: 1.5;
+}
+
+p{
+	font-size: 150%;
+	padding: 10px;
+}
+@media screen and (min-width: 700px){
+  fieldset{
+  	width: 60%;
+  }
+}
+@media screen and (min-width: 900px){
+  fieldset{
+  	width: 60%;
+  }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name = 'viewport' content='width=device-width, initial-scale=1'>
+    <title>Stephen Fedewa Portfolio: Projects</title>
+  </head>
+  <body>
+    <header id="top">
+      <h1>Stephen Fedewa</h1>
+    </header>
+    <div class="skip"><a href="#main">Skip to Main Content</a></div>
+      <nav class = "navbar">
+        <ul class="nav-links">
+          <li class = "nav-item"><a href="index.html">About</a></li>
+          <li class = "nav-item"><a href="resume.html">Resume</a></li>
+          <li class = "current"><a href="projects.html">Projects</a></li>
+          <li class = "nav-item"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <h1 id = "main">Projects</h1>
+      <div class = "project-grid">
+        <h2 id = "p1-head"> C++ Eurchre<br>(EECS 280 Project) </h2>
+        <p id = "p1-deets"> A project infamous in my school for its difficulty, it involved creating a working game of Euchre with
+          computer players that follow a simple strategy and human players that can make their choices by inputting from the keyboard.
+          Settings for the game were inputted through the command line using argv and argc. <br><br>
+           I utilized several different classes including Card, Pack, Player (Human and Computer), and an overall Game class that all
+           worked together to make Euchre work. Helped me learn to carefully think through every possible scenario and how they could overlap
+           (checking the trump suit, checking for bowers, making sure players can follow suit, etc.) </p>
+        <div class = "p1-img">
+          <img src="images/eecs280-euchre.jpg" id = "p1-img" alt="My EECS 280 instructor teaching us to play
+          EECS 280 Euchre."/>
+        </div>
+
+        <h2 id = "p2-head"> A New Heap: A Stock Market Simulation<br>(EECS 281 Project)</h2>
+        <p id = "p2-deets"> This was a fun and nerdy reskin of a stock market simulator using Priority Queues. The program read lines from a file. Each line had the following info:<br>
+          Timestamp, General ID, Planet ID, Jedi or Sith, Force-sensitivity, and # of troops.<br>
+          Generals would deploy Jedi or Sith battalions to certain planets to do battle. When deployed to a planet, Sith battalions
+          would attack the Jedi battalion with the least force-sensitivity on that planet (so long as the Sith’s force-sensitivity was
+          greater or equal to the Jedi’s), with ties broken based on which Jedi had the earliest timestamp. (Determined through a priority queue with
+          custom comparators). Battalions would trade troops one for one until one side ran out and was thus defeated.<br> <br>In our stock market metaphor,
+          planets are the traded commodities, and Generals are stock market traders. Jedi are the buyers wanting to buy low,
+          and Sith are the sellers trying to sell high. Battles/trades continue on the planet until and equilibrium is met where nobody is buying or selling.
+          The project also included a “movie watcher mode” similar to a streaming algorithm which lets us go back in time and determine when the optimal point to
+          buy then sell was. This project taught me a lot about priority queues, comparators, and the tracking of multiple data structures for the
+          different modes in the program.
+           </p>
+        <div class = "p2-img">
+          <img src="images/star-wars.jpg" id = "p2-img" alt="Poster for a Star Wars movie."/>
+        </div>
+
+        <h2 id = "p3-head"> Traveling Donut Salesman<br>(EECS 281 Project)</h2>
+        <p id = "p3-deets">My final EECS 281 project had me solving the infamous Traveling Salesman Problem (TSP), which goes as following:<br>
+          Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and
+          returns to the origin city? Our framing for this problem was a donut enthusiast that wanted to try the best donuts at the best shops around the US and Canada.<br><br>
+          There were three parts to this project: Minimum Spanning Tree, Fast TSP, and Optimal TSP. In part one, we created an MST utilizing Kruskal’s algorithm
+          and a distance matrix. An MST for a set of points connects all of the points such that there are no cycles and the sum of their connecting edge weights
+          are minimal. Fast TSP creates a quick and close to optimal solution using the nearest insertion heuristic. Optimal TSP finds the shortest possible
+          route between all of the cities. This is an O(n!) operation because it requires checking every combination of every point on the map. This is made more
+          efficient by checking if a combination is ‘promising.’ I’d create an MST starting from a potential node, connect it to our current TSP graph, and check
+          if that total distance is a better option than with other nodes we’ve checked. This allows us to skip several unnecessary operations.<br><br>
+          This taught me about tradeoffs between different solutions to the same problem. We’d love to have the optimal solution, but the OPT TSP algorithm
+          is far too slow for any more than about 30 points. O(n!) algorithms scale incredibly quickly with more inputs. Just a few more points could add hours
+           or more to finding a solution. That’s why it’s often best to settle for a close-to-optimal solution that gives an answer in a reasonable amount of time
+           even with a large amount of input.
+        </p>
+        <div class = "p3-img">
+          <img src="images/traveling-salesman.png" id = "p3-img" alt="Visual representation of the traveling salesman problem."/>
+        </div>
+
+        <h2 id = "p4-head"> Mario Party in Minecaft </h2>
+        <p class = "p4-deets" id = "p4-deets1">This is an in-progress personal project that came out of a desire to be able to play Mario Party, a console video game known
+          for its local multiplayer, online with friends. Many of my close friends all go to different colleges or live on opposite sides of the state.
+          Much of our interaction comes from playing online games together such as Minecraft. Minecraft is known for allowing you to build whatever you want
+           out of its hundreds of different types of cubed blocks. It even has an item called a “Command Block” (the orange and white block my character is holding
+           in the screenshot) that lets you input lines of code similar to the Java language. With enough knowledge of Minecraft’s mechanics, you could essentially
+           design your own game within a game. That is what me and my best friend decided to do together.<br>
+          This project has been an incredibly satisfying challenge. Building the game environments was easy. The hard part was creating the mechanics
+          utilizing Minecraft’s command blocks.<br></p>
+
+          <p class = "p4-deets" id = "command"><strong>Example Command:</strong><br>/tellraw @a [{"text":"&lt;","color":"dark_green"},{"text":"YES”color":"green","clickEvent":{"action":"run_command","value":"
+          /setblock -50 52 -54 minecraft:redstone_block"}, "hoverEvent":{"action":"show_text","value":"YES"}},{"text":"&gt;","color":"dark_green"}]
+          <br><br>
+
+          This example displays green colored text in the game’s chat log "&lt; YES &gt;" When this text is clicked on, it sets a “redstone block” at specific
+          coordinates to continue the process this command is part of.
+          You can see with this example that this is essentially a gigantic coding project with the added challenge of having to find physical spots in the world
+          to place these blocks and make sure they don’t overlap.</p>
+          <p class = "p4-deets" id = "p4-deets2">
+          This project has given me tons of experience applicable to coding on a team. Spencer and I would divide up responsibilities based on our
+          strengths. Bugs would often arise from not understanding how mechanics built by the other person worked, forcing us to learn to communicate to each
+          other exactly what we were doing. We learned to leave detailed signs around important sections of commands (essentially like commenting our code). It’s
+          taught us so much about problem solving. We’ve had several fun discussions where we’d try to find ways to implement complex mechanical ideas.
+          Many of these concepts would be relatively simple in a common programming language like Python but are made much more difficult within Minecraft’s
+          restrictions. You know what they say, constraints often breed creativity. I cannot wait to show this project to the world.
+          We’ve already put a ton of work into it over three short months, and the experience I’ve gained from it ensures me I haven’t just been
+          wasting my time playing video games.
+          </p>
+        <div class = "p4-img">
+          <img src="images/minecraft-party.png" id = "p4-img" alt="An in-progress project to recreate the video game Mario
+          Party within the game of Minecraft."/>
+        </div>
+
+      </div>
+
+    <footer>
+        University of Michigan School of Information <br>
+        &copy; Stephen Fedewa - Web Design 2019-2020
+    </footer>
+
+    </body>
+  </html>

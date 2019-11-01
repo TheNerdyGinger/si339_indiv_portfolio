@@ -1,2 +1,2 @@
-# si339_indiv_portfolio
-Portfolio project for SI339
+# SI339_Individual_Portfolio
+Portfolio site for SI 339
